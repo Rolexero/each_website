@@ -20,6 +20,8 @@ export const navigation: NavigationItem[] = [
 
   { name: "Products", href: "#products", current: false },
   { name: "Gallery", href: "#gallery", current: false },
+    { name: "Contact us", href: "#contactus", current: false },
+
 ];
 
 function classNames(...classes: string[]) {
