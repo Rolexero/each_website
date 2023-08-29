@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -41,7 +44,17 @@ const Provide = () => {
       <div className="mx-auto max-w-7xl px-4 my-10 sm:py-20 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* COLUMN-1 */}
-          <div className="col-span-6 flex">
+          <motion.div
+            className="col-span-6 flex"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             <div className="flex flex-col align-middle justify-center p-2 md:p-4">
               <p className="text-4xl lg:text-6xl pt-4 font-semibold lh-81  text-center lg:text-start">
                 We provide that service.
@@ -53,12 +66,12 @@ const Provide = () => {
                 vitae dicta sunt explicabo
               </h4>
             </div>
-          </div>
+          </motion.div>
 
           <div className="lg:col-span-1"></div>
 
           {/* COLUMN-2 */}
-          <div className="col-span-6 lg:col-span-5">
+          <motion.div className="col-span-6 lg:col-span-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10 lg:gap-x-40 px-10 py-12 bg-bluebg rounded-3xl">
               {Aboutdata.map((item, i) => (
                 <div
@@ -79,7 +92,7 @@ const Provide = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

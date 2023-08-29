@@ -1,9 +1,22 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const Banner = () => {
   return (
-    <main id="home">
+    <motion.main
+      id="home"
+      initial={{ opacity: 1 }}
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.1 }}
+      variants={{
+        visible: { opacity: 1, y: -10 },
+        hidden: { opacity: 0, y: 0 },
+      }}
+    >
       <div className="px-6 lg:px-8">
         <div className="mx-auto max-w-7xl pt-16 sm:pt-20 pb-10 banner-image">
           <div className="text-center">
@@ -44,7 +57,7 @@ const Banner = () => {
           />
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 };
 

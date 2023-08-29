@@ -15,7 +15,7 @@ export default function Home() {
       <Provide />
       <Buyers />
       <Gallery />
-      <Clientsay />
+      {/* <Clientsay /> */}
       <Newsletter />
     </main>
   );

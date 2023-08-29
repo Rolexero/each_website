@@ -1,6 +1,8 @@
 import "./globals.css";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/Footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: "Elegance Allied Chemicals and Paints",
@@ -15,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="w-full">
+        {" "}
         <Navbar />
         {children}
         <Footer />
